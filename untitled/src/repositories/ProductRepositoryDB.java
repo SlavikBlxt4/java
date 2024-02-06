@@ -7,7 +7,7 @@ public class ProductRepositoryDB implements Repository<Producto> {
 
     @Override
     public void save(Producto entity) {
-
+        System.out.println("Guardando en DB");
     }
 
     @Override
