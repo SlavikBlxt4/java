@@ -20,7 +20,7 @@ public class App {
 
         Properties properties = new Properties();
         properties.setProperty("user", "postgres");
-        properties.setProperty("password", "12344321");
+        properties.setProperty("password", "postgres");
         properties.setProperty("ssl", "false");
 
         // Connection
