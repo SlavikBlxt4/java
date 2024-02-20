@@ -1,11 +1,5 @@
 package com.svalero;
 
-import java.sql.Statement;
-import java.sql.Connection;
-import java.sql.DriverManager;
-import java.sql.ResultSet;
-import java.sql.SQLException;
-import java.util.Properties;
 
 import com.svalero.utils.MotorSQL;
 
@@ -15,7 +9,7 @@ import com.svalero.utils.MotorSQL;
  */
 public class App {
     public static void main(String[] args) {
-        
+
         // Connection
         // Connection conn = DriverManager.getConnection(url, user, password);
         MotorSQL.connect();
