@@ -25,6 +25,10 @@ public class App {
 
         // Connection
         // Connection conn = DriverManager.getConnection(url, user, password);
+        String sql = "SELECT * FROM USUARIOS";
+        MotorSQL.connnect();
+        MotorSQL.ejectutarSentenciaConDatos();
+        MotorSQL.disconnnect();
         try {
             Connection conn = DriverManager.getConnection(url, properties);
             if (conn != null) {
