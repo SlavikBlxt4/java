@@ -32,13 +32,10 @@ public class MotorSQL{
         }
     }
     
-    public static void ejectutarSentencia(){
+    public static void ejectutarSentencia(String sentencia){
         try {
             stm = (Statement) conn.createStatement();
-            String create = "CREATE TABLE IF NOT EXISTS usuario (name VARCHAR(20));";
-            String insert = "INSERT INTO usuario (name) VALUES ('Xavi');";
-            stm.executeUpdate(create);
-            stm.executeUpdate(insert);
+            stm.executeUpdate(sentencia);
             
 
 
@@ -47,14 +44,13 @@ public class MotorSQL{
         }
         
     }
-    public static void ejectutarSentenciaConDatos(){
+    public static void ejectutarSentenciaConDatos(String consulta){
         try {
 
             if (conn != null) {
                 System.out.println("Connected to the database!");
             }
             stm = (Statement) conn.createStatement();
-            String consulta = "SELECT * FROM usuario;";
 
             listaDatosBD = (ResultSet) stm.executeQuery(consulta);
 

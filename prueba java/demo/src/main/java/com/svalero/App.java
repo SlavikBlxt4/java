@@ -13,8 +13,8 @@ public class App {
         // Connection
         // Connection conn = DriverManager.getConnection(url, user, password);
         MotorSQL.connect();
-        MotorSQL.ejectutarSentencia();
-        MotorSQL.ejectutarSentenciaConDatos();
+        MotorSQL.ejectutarSentencia("INSERT INTO USUARIO (name) VALUES ('Sergio')");
+        MotorSQL.ejectutarSentenciaConDatos("SELECT * FROM usuario");
         MotorSQL.disconnect();
 
         System.out.println("Hello World!");
