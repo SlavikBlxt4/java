@@ -12,8 +12,16 @@ public class MotorSQL{
     private Connection conexion;
     private Statement sentenciaSQL;
     private ResultSet listaDatosBD;
-    public void connect();
-    public void disconnect();
-    public void ejectutarSentencia();
-    public void ejectutarSentenciaConDatos();
+    public void connect(){
+
+    }
+    public void disconnect(){
+        
+    }
+    public void ejectutarSentencia(){
+        
+    }
+    public void ejectutarSentenciaConDatos(){
+        
+    }
 }
