@@ -11,7 +11,7 @@ public class MotorSQL{
     private static Connection conn;
     private static Statement stm;
     private static ResultSet listaDatosBD;
-    static String url = "jdbc:postgresql://basedatosxavi.c1iywqwec4uj.us-east-1.rds.amazonaws.com/";
+    static String url = "jdbc:postgresql://basedatosxavi.c1iywqwec4uj.us-east-1.rds.amazonaws.com/postgres";
 
     public static void connect(){
         try {
