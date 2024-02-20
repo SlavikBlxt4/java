@@ -10,6 +10,7 @@ public class MotorSQL{
 
     private static Connection conn;
     private static Statement stm;
+    private static ResultSet listaDatosBD;
     static String url = "jdbc:postgresql://postgresdb.cg6vma2ag6q6.us-east-1.rds.amazonaws.com/CareConnect";
 
     public static void connect(){
@@ -42,7 +43,7 @@ public class MotorSQL{
             stm = (Statement) conn.createStatement();
             String consulta = "SELECT * FROM user";
 
-            ResultSet listaDatosBD = (ResultSet) stm.executeQuery(consulta);
+            listaDatosBD = (ResultSet) stm.executeQuery(consulta);
 
             while (listaDatosBD.next()) { 
                 System.out.println("Hay registros!!!!");
