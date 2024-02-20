@@ -11,7 +11,7 @@ public class MotorSQL{
     private static Connection conn;
     private static Statement stm;
     private static ResultSet listaDatosBD;
-    static String url = "jdbc:postgresql://basedatosxavi.c1iywqwec4uj.us-east-1.rds.amazonaws.com/CareConnect";
+    static String url = "jdbc:postgresql://basedatosxavi.c1iywqwec4uj.us-east-1.rds.amazonaws.com/";
 
     public static void connect(){
         try {
@@ -25,6 +25,7 @@ public class MotorSQL{
     public static void disconnect(){
         try {
             conn.close();
+            
         } catch (SQLException e) {
             // TODO Auto-generated catch block
             e.printStackTrace();
@@ -37,8 +38,8 @@ public class MotorSQL{
                 System.out.println("Connected to the database!");
             }
             stm = (Statement) conn.createStatement();
-            String create = "CREATE TABLE IF NOT EXISTS user (name VARCHAR(255))";
-            String insert = "INSERT INTO user (name) VALUES ('Xavi')";
+            String create = "CREATE TABLE IF NOT EXISTS user (name VARCHAR(255));";
+            String insert = "INSERT INTO user (name) VALUES ('Xavi');";
             stm.executeUpdate(create);
             stm.executeUpdate(insert);
             
@@ -56,7 +57,7 @@ public class MotorSQL{
                 System.out.println("Connected to the database!");
             }
             stm = (Statement) conn.createStatement();
-            String consulta = "SELECT * FROM user";
+            String consulta = "SELECT * FROM user;";
 
             listaDatosBD = (ResultSet) stm.executeQuery(consulta);
 
