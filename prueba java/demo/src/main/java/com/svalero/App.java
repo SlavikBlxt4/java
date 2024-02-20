@@ -13,6 +13,7 @@ public class App {
         // Connection
         // Connection conn = DriverManager.getConnection(url, user, password);
         MotorSQL.connect();
+        MotorSQL.ejectutarSentencia();
         MotorSQL.ejectutarSentenciaConDatos();
         MotorSQL.disconnect();
 
