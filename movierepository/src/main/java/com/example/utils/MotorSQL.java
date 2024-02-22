@@ -53,12 +53,6 @@ public class MotorSQL {
 
             listaDatosBD = (ResultSet) stm.executeQuery(consulta);
 
-            while (listaDatosBD.next()) { 
-                System.out.println("Hay registros!!!!");
-                String name1 = listaDatosBD.getString(1);
-                System.out.println("name=>" + name1);
-            }
-
         } catch (SQLException e) {
             System.out.println(e.getMessage());
         }
