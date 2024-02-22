@@ -8,32 +8,20 @@ public class App {
 
     public static void main(String[] args) {
 
-        repo_interface repository1 = new memory_repo();
-        repo_interface repository2 = new postgres_repo();
-        repo_interface repository3 = new file_repo();
+        List<repo_interface> repositories = new ArrayList<>();
+        repositories.add(new memory_repo());
+        repositories.add(new postgres_repo());
+        repositories.add(new file_repo());
 
-        Service service1 = new Service(repository1); //memory
-        Service service2 = new Service(repository2); //postgres
-        Service service3 = new Service(repository3);  //file
+        Service service;
+        for (repo_interface repository : repositories) {
+            service = new Service(repository);
+            List<Pelicula> movies = service.getMovies();
+            for (Pelicula movie : movies) {
+                System.out.println(movie.toString());
+            }
+}
 
-        List<Pelicula> movies1 = service1.getMovies();
-        List<Pelicula> movies2 = service2.getMovies();
-        List<Pelicula> movies3 = service3.getMovies();
-
-        for (Pelicula movie : movies1) {
-            System.out.println(movie.toString());
-        }
-
-        for (Pelicula movie : movies2) {
-            System.out.println(movie.toString());
-        }
-
-        for (Pelicula movie : movies3) {
-            System.out.println(movie.toString());
-        }
-
-
-    }
-
+}
 
 }
