@@ -35,6 +35,14 @@ public class Pelicula {
         this.director = director;
     }
 
+    @Override
+    public String toString() {
+        return "Pelicula{" +
+                "id=" + id +
+                ", titulo='" + titulo + '\'' +
+                ", director='" + director + '\'' +
+                '}';
+    }
     
 
 }
