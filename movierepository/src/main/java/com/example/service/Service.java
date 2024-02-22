@@ -1,13 +1,13 @@
 package com.example.service;
 import java.util.List;
 import com.example.Repositories.*;
-import com.example.interfaces.repo_interface;
+import com.example.interfaces.Repository;
 
 
 public class Service {
-     private repo_interface repository;
+     private Repository repository;
 
-    public Service(repo_interface repository) {
+    public Service(Repository repository) {
         this.repository = repository;
     }
 

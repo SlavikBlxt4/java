@@ -17,16 +17,13 @@ public class MotorSQL {
             PropertiesClass propertiesClass = new PropertiesClass();
             conn = DriverManager.getConnection(url, propertiesClass.properties);
         } catch (SQLException e) {
-            // TODO Auto-generated catch block
             e.printStackTrace();
         }
     }
     public static void disconnect(){
         try {
             conn.close();
-            
         } catch (SQLException e) {
-            // TODO Auto-generated catch block
             e.printStackTrace();
         }
     }
@@ -35,24 +32,17 @@ public class MotorSQL {
         try {
             stm = (Statement) conn.createStatement();
             stm.executeUpdate(sentencia);
-            
-
-
         } catch (SQLException e) {
             System.out.println(e.getMessage());
-        }
-        
+        } 
     }
     public static ResultSet ejecutarSentenciaConDatos(String consulta){
         try {
-
             if (conn != null) {
                 System.out.println("Connected to the database!");
             }
             stm = (Statement) conn.createStatement();
-
             listaDatosBD = (ResultSet) stm.executeQuery(consulta);
-
         } catch (SQLException e) {
             System.out.println(e.getMessage());
         }

@@ -1,6 +1,6 @@
 package com.example.Repositories;
 
-import com.example.interfaces.repo_interface;
+import com.example.interfaces.Repository;
 import com.example.utils.MotorSQL;
 
 import java.sql.ResultSet;
@@ -9,17 +9,20 @@ import java.util.ArrayList;
 import java.util.List;
 
 
-public class postgres_repo implements repo_interface {
+public class PostgreRepo implements Repository {
 
-    @Override
-    public List<Pelicula> getMovies() {
-        MotorSQL.connect(); // Establish database connection
+    public PostgreRepo(){
         MotorSQL.ejecutarSentencia("DROP TABLE  IF EXISTS Peliculas CASCADE");
         MotorSQL.ejecutarSentencia("CREATE TABLE IF NOT EXISTS PELICULA (id SERIAL, name VARCHAR(50), director VARCHAR(50), PRIMARY KEY(id))");
         MotorSQL.ejecutarSentencia("INSERT INTO PELICULA (name, director) VALUES ('Titanic', 'James Cameron')");
         MotorSQL.ejecutarSentencia("INSERT INTO PELICULA (name, director) VALUES ('Harry Potter', 'J. K. Rowling')");
         MotorSQL.ejecutarSentencia("INSERT INTO PELICULA (name, director) VALUES ('Star Wars', 'George Lucas')");
+    }
 
+    @Override
+    public List<Pelicula> getMovies() {
+        MotorSQL.connect(); // Establish database connection
+        
         List<Pelicula> peliculas = new ArrayList<>();
         ResultSet resultSet = MotorSQL.ejecutarSentenciaConDatos("SELECT * FROM PELICULA");
         try {
