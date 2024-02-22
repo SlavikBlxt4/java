@@ -12,7 +12,8 @@ public class file_repo implements repo_interface {
     @Override
     public List<Pelicula> getMovies() {
         List<Pelicula> movies = new ArrayList<>();
-        String filePath = "movierepository/src/main/java/com/example/Repositories/peliculas.txt";
+        String filePath = "c:/Users/S2-PC00/Desktop/java/movierepository/src/main/java/com/example/Repositories/peliculas.txt";
+
         try (BufferedReader reader = new BufferedReader(new FileReader(filePath))) {
             String line;
             while ((line = reader.readLine()) != null) {

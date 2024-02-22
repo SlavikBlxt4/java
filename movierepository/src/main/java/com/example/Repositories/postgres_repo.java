@@ -15,6 +15,12 @@ public class postgres_repo implements repo_interface {
     public List<Pelicula> getMovies() {
         MotorSQL.connect(); // Establish database connection
         MotorSQL.ejecutarSentencia("CREATE TABLE IF NOT EXISTS PELICULA (id SERIAL, name VARCHAR(50), director VARCHAR(50), PRIMARY KEY(id))");
+        MotorSQL.ejecutarSentencia("DELETE FROM PELICULA\r\n" + //
+                "WHERE name = 'Titanic';");
+        MotorSQL.ejecutarSentencia("DELETE FROM PELICULA\r\n" + //
+                "WHERE name = 'Harry Potter';");
+        MotorSQL.ejecutarSentencia("DELETE FROM PELICULA\r\n" + //
+                "WHERE name = 'Star Wars';");
         MotorSQL.ejecutarSentencia("INSERT INTO PELICULA (name, director) VALUES ('Titanic', 'James Cameron')");
         MotorSQL.ejecutarSentencia("INSERT INTO PELICULA (name, director) VALUES ('Harry Potter', 'J. K. Rowling')");
         MotorSQL.ejecutarSentencia("INSERT INTO PELICULA (name, director) VALUES ('Star Wars', 'George Lucas')");
